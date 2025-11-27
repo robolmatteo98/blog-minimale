@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "Questa è la prima nota",
+    "color": "bg-blue-100 dark:bg-blue-900"
+  },
+  {
+    "id": 2,
+    "text": "Seconda nota: proviamo la pagination",
+    "color": "bg-green-100 dark:bg-green-900"
+  },
+  {
+    "id": 3,
+    "text": "Terza nota, colore viola",
+    "color": "bg-purple-100 dark:bg-purple-900"
+  }
+]
