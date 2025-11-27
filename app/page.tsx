@@ -74,55 +74,7 @@ export default function Home() {
 
         {/* Contenuto */}
         <section className="bg-white dark:bg-neutral-800 shadow-lg rounded-2xl p-8 transition-all min-h-[300px]">
-          {showForm ? (
-            <div className="flex flex-col gap-4">
-              {/* Textarea testo */}
-              <textarea
-                maxLength={MAX_CHARS}
-                className="w-full min-h-[150px] p-4 rounded-xl bg-zinc-100 dark:bg-neutral-700 text-zinc-900 dark:text-zinc-100 focus:ring-2 ring-blue-600 outline-none"
-                placeholder="Scrivi una nuova nota..."
-                value={newNote}
-                onChange={(e) => setNewNote(e.target.value)}
-              />
-
-              {/* Input URL immagine */}
-              <input
-                type="url"
-                placeholder="URL immagine (opzionale)"
-                value={newImage}
-                onChange={(e) => setNewImage(e.target.value)}
-                className="w-full p-3 rounded-xl bg-zinc-100 dark:bg-neutral-700 text-zinc-900 dark:text-zinc-100 focus:ring-2 ring-blue-600 outline-none"
-              />
-
-              {/* Contatore caratteri */}
-              <div
-                className={`text-right font-semibold ${
-                  charsLeft < 20
-                    ? "text-red-500"
-                    : "text-zinc-500 dark:text-zinc-300"
-                }`}
-              >
-                {charsLeft} caratteri rimasti
-              </div>
-
-              {/* Pulsanti Aggiungi / Annulla */}
-              <div className="flex gap-4">
-                <button
-                  onClick={addNote}
-                  disabled={newNote.trim().length === 0}
-                  className="bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white px-6 py-3 rounded-xl font-semibold transition-all disabled:bg-zinc-400 disabled:cursor-not-allowed"
-                >
-                  Aggiungi
-                </button>
-                <button
-                  onClick={() => setShowForm(false)}
-                  className="px-6 py-3 rounded-xl bg-zinc-300 hover:bg-zinc-400 text-zinc-800 dark:bg-neutral-600 dark:text-white transition-all"
-                >
-                  Annulla
-                </button>
-              </div>
-            </div>
-          ) : (
+          {(
             <>
               {/* Lista note */}
               {notes.length === 0 ? (
